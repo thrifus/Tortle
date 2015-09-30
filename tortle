@@ -6,17 +6,13 @@
 #-----  http://thrifus.co/
 #-----  http://github.com/thrifus/
 
-## Self explanatory
-proxyAddress=127.0.0.1
-## Also self explanatory
-proxyPort=9050
-## Should also be self explanatory if not, it's the config file for Tor
+## Should be self explanatory, if not, it's the config file for Tor
 torccFile=/usr/local/etc/tor/torcc
-## ARGS
+## Arguments
 enableTor=
 disableTor=
 
-## Setup the ARGS
+## Setup the arguments
 while [ "$1" != "" ]; do
 case $1 in
     -e | --enable )     enableTor=1
@@ -27,22 +23,24 @@ case $1 in
 esac
 done
 
-## Check the ARGS
+## Check the arguments
 if [ "$enableTor" = "1" ]
 then
 ## Run Tor as a daemon so we don't have to keep the window open
     tor --runasdaemon 1 -f $torccFile
 ## Inject the following commands (wich need root) into a Bash shell
 sudo bash <<'INJECT'
+    ## Self explanatory
     proxyAddress=127.0.0.1
+    ## Also self explanatory
     proxyPort=9050
 
     ## Set the SOCKS proxy
     sudo networksetup -setsocksfirewallproxy "Wi-Fi" $proxyAddress $proxyPort
-    ## Set the SOCKS proxy on
+    ## Set the SOCKS proxy to on
     sudo networksetup -setsocksfirewallproxystate Wi-Fi on
 INJECT
-    echo -e "\033[1mTor is now enabled, and SOCKS proxy is set to $proxyAddress:$proxyPort\033[0m"
+    echo -e "\033[1mTor is now enabled and SOCKS proxy has been enabled to use Tor.\033[0m"
     exit 0
 elif [ "$disableTor" = "1" ]
 then
@@ -50,12 +48,12 @@ then
 sudo bash <<'INJECT'
     ## Kill Tor
     sudo killall -9 tor
-    ## Set the SOCKS proxy off
+    ## Set the SOCKS proxy to off
     sudo networksetup -setsocksfirewallproxystate Wi-Fi off
 INJECT
-    echo -e "\033[1mTor has been stopped, and SOCKS proxy on $proxyAddress:$proxyPort has been disabled.\033[0m"
+    echo -e "\033[1mTor has been stopped and SOCKS proxy has been disabled.\033[0m"
     exit 0
 elif [ "$1" = "" ]
 then
-    echo -e "\033[1mUsage: tortle [-e or --enable to enable ] [-d or --disable to disable]\033[0m"
+    echo -e "\033[1mUsage: tortle [-e or --enable to enable ] [-d or --disable to disable]\033[0m]"
 fi
