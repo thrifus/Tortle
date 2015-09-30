@@ -4,7 +4,7 @@
 #-----  Patrick Hart
 #-----  thrifus@gmail.com
 #-----  http://thrifus.co/
-#-----  http://github.com/thrifus/
+#-----  http://github.com/thrifus/Tortle
 
 ## Should be self explanatory, if not, it's the config file for Tor
 torccFile=/usr/local/etc/tor/torcc
