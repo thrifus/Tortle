@@ -2,7 +2,17 @@
 
 <br />
 ### Description:
-__Tortle is a small litle utility for Mac OS X that can easily enable and disable Tor.__
+Tortle is a small litle utility for Mac OS X that can easily enable and disable Tor.
+
+Please note that you will need to setup your __torcc__ file. If the path to your __torcc__ file is not __/usr/local/etc/tor/torcc__ you will need to change the variable `torccFile` accordingly.
+Also, the default address and port are used __(127.0.0.1:9050)__, so if you normally use a different address/port you must change the variables `proxyAddress` and `proxyPort` accordingly.
+
+<br />
+### Installation:
+__Using `cURL`:__
++ `sudo curl https://raw.githubusercontent.com/thrifus/Tortle/master/tortle -o /usr/bin/tortle; sudo chmod +x /usr/bin/tortle`
+
+__Other installation methods may be implemented later__
 
 <br />
 ### Usage:
