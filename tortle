@@ -57,5 +57,5 @@ INJECT
     exit 0
 elif [ "$1" = "" ]
 then
-    echo "Usage: tortle [-e or --enable to enable ] [-d or --disable to disable]"
+    echo -e "\033[1mUsage: tortle [-e or --enable to enable ] [-d or --disable to disable]\033[0m"
 fi
