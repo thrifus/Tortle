@@ -9,8 +9,6 @@ Also, the default address and port are used __(127.0.0.1:9050)__, so if you norm
 
 <br />
 ### Installation:
-_Tortle requires that you have Tor installed on your system. For instructions on installing Tor, visit [here](https://www.torproject.org/docs/installguide.html)._
-
 __Using `cURL`:__
 + `sudo curl https://raw.githubusercontent.com/thrifus/Tortle/master/tortle -o /usr/bin/tortle; sudo chmod +x /usr/bin/tortle`
 
