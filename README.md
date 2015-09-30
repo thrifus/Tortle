@@ -1,4 +1,4 @@
-# ![Tortle Header Image](./Icon.png) Tortle - A tiny utility for Tor
+# ![Tortle Header Image](http://i.imgur.com/wsacBIn.png) Tortle - A tiny utility for Tor on OS X
 
 <br />
 ### Description:
