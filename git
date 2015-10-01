@@ -1,0 +1,16 @@
+==> Applying patch
+Applying: Tortle v1.0.0 - Initial Commit
+Applying: Add dependency for Tor
+Applying: Update tortle.rb
+Applying: Update tortle.rb
+Using index info to reconstruct a base tree...
+M	Library/Formula/tortle.rb
+Falling back to patching base and 3-way merge...
+Auto-merging Library/Formula/tortle.rb
+CONFLICT (content): Merge conflict in Library/Formula/tortle.rb
+Patch failed at 0004 Update tortle.rb
+The copy of the patch that failed is found in:
+   /usr/local/.git/rebase-apply/patch
+When you have resolved this problem, run "git am --continue".
+If you prefer to skip this patch, run "git am --skip" instead.
+To restore the original branch and stop patching, run "git am --abort".
