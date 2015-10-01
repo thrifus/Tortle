@@ -16,7 +16,7 @@ __Using Homebrew (recommended):__
 __Using `cURL` to install to `/usr/bin/tortle`:__
 + `sudo curl https://raw.githubusercontent.com/thrifus/Tortle/master/tortle -o /usr/bin/tortle; sudo chmod +x /usr/bin/tortle`
 
-___(Other installation methods may be implemented later)___
+_(Other installation methods may be implemented later)_
 
 <br />
 ### Usage:
