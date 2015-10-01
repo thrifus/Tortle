@@ -9,14 +9,14 @@ Also, the default address and port are used __(127.0.0.1:9050)__, so if you norm
 
 <br />
 ### Installation:
-__Using `cURL` (install to /usr/bin/tortle):__
-+ `sudo curl https://raw.githubusercontent.com/thrifus/Tortle/master/tortle -o /usr/bin/tortle; sudo chmod +x /usr/bin/tortle`
-
-__Using Homebrew:__
+__Using Homebrew (recommended):__
 + `brew tap thrifus/Tortle`
 + `brew install Tortle`
 
-__Other installation methods may be implemented later__
+__Using `cURL` to install to `/usr/bin/tortle`:__
++ `sudo curl https://raw.githubusercontent.com/thrifus/Tortle/master/tortle -o /usr/bin/tortle; sudo chmod +x /usr/bin/tortle`
+
+___(Other installation methods may be implemented later)___
 
 <br />
 ### Usage:
