@@ -6,7 +6,7 @@
 #-----  http://thrifus.co/
 #-----  http://github.com/thrifus/Tortle
 
-#-----  Tortle version 1.0.6
+#-----  Tortle version 1.0.8
 
 ## Makes bold an normal text, much easier than writing ${bold} text ${normal} every time
 bold=$(tput bold)
