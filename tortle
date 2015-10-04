@@ -28,7 +28,7 @@ done
 if [ "$enableTor" = "1" ]
 then
 ## Run Tor as a daemon so we don't have to keep the window open
-    tor --runasdaemon 1 -f #$torccFile
+    tor --runasdaemon 1 #-f $torccFile
 ## Inject the following commands (wich need root) into a Bash shell
 sudo bash <<'INJECT'
     ## Self explanatory
