@@ -6,9 +6,13 @@
 #-----  http://thrifus.co/
 #-----  http://github.com/thrifus/Tortle
 
+#-----  Tortle version 1.0.6
+
+## Makes bold an normal text, much easier than writing ${bold} text ${normal} every time
+bold=$(tput bold)
+normal=$(tput sgr0)
 ## Should be self explanatory, if not, it's the config file for Tor
-##### REMOVING THIS UNTIL LATER, TOR WILL USE THE DEFAUT CONFIGURATION IF NO TORCC FILE IS FOUND, SO WE DON'T REALLY NEED THIS #####
-# torccFile=/usr/local/etc/tor/torcc
+torccFile=/usr/local/etc/tor/torcc
 ## Arguments
 enableTor=
 disableTor=
@@ -28,7 +32,7 @@ done
 if [ "$enableTor" = "1" ]
 then
 ## Run Tor as a daemon so we don't have to keep the window open
-    tor --runasdaemon 1 #-f $torccFile
+    tor --runasdaemon 1 -f $torccFile
 ## Inject the following commands (wich need root) into a Bash shell
 sudo bash <<'INJECT'
     ## Self explanatory
@@ -37,11 +41,17 @@ sudo bash <<'INJECT'
     proxyPort=9050
 
     ## Set the SOCKS proxy
-    sudo networksetup -setsocksfirewallproxy "Wi-Fi" $proxyAddress $proxyPort
+    sudo networksetup -setsocksfirewallproxy Wi-Fi $proxyAddress $proxyPort
+
     ## Set the SOCKS proxy to on
     sudo networksetup -setsocksfirewallproxystate Wi-Fi on
+
+    ## Restart network to ensure proxy connections
+    echo -e '\033[1mRestarting your network...\033[0m'
+    echo
+    sudo networksetup -setairportpower en0 off; networksetup -setairportpower en0 on
 INJECT
-    echo -e "\033[1mTor is now enabled and SOCKS proxy has been enabled to use Tor.\033[0m"
+    echo -e "${bold}Tor is now enabled and SOCKS proxy has been enabled to use Tor.${normal}"
     exit 0
 elif [ "$disableTor" = "1" ]
 then
@@ -49,12 +59,18 @@ then
 sudo bash <<'INJECT'
     ## Kill Tor
     sudo killall -9 tor
+
     ## Set the SOCKS proxy to off
     sudo networksetup -setsocksfirewallproxystate Wi-Fi off
+
+    ## Restart network to ensure proxy connections
+    echo -e '\033[1mRestarting your network...\033[0m'
+    echo
+    sudo networksetup -setairportpower en0 off; networksetup -setairportpower en0 on
 INJECT
-    echo -e "\033[1mTor has been stopped and SOCKS proxy has been disabled.\033[0m"
+    echo -e "${bold}Tor has been stopped and SOCKS proxy has been disabled.${normal}"
     exit 0
 elif [ "$1" = "" ]
 then
-    echo -e "\033[1mUsage: tortle [-e or --enable to enable ] [-d or --disable to disable]\033[0m]"
+    echo -e "${bold}Usage: tortle [-e or --enable to enable ] [-d or --disable to disable]${normal}"
 fi
