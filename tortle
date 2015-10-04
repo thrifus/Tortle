@@ -7,7 +7,8 @@
 #-----  http://github.com/thrifus/Tortle
 
 ## Should be self explanatory, if not, it's the config file for Tor
-torccFile=/usr/local/etc/tor/torcc
+##### REMOVING THIS UNTIL LATER, TOR WILL USE THE DEFAUT CONFIGURATION IF NO TORCC FILE IS FOUND, SO WE DON'T REALLY NEED THIS #####
+# torccFile=/usr/local/etc/tor/torcc
 ## Arguments
 enableTor=
 disableTor=
@@ -27,7 +28,7 @@ done
 if [ "$enableTor" = "1" ]
 then
 ## Run Tor as a daemon so we don't have to keep the window open
-    tor --runasdaemon 1 -f $torccFile
+    tor --runasdaemon 1 -f #$torccFile
 ## Inject the following commands (wich need root) into a Bash shell
 sudo bash <<'INJECT'
     ## Self explanatory
