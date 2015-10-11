@@ -30,3 +30,6 @@ I just threw together the Tortle icon (see attributions below), so it looks kind
 ### Attributions:
 + Turtle icon made by [Freepik](http://www.flaticon.com/authors/freepik) from [Flaticon.com](http://www.flaticon.com/)
 + Turtle icon has been edited, for original icon, please see [here](http://www.flaticon.com/free-icon/big-turtle-_74710)
+
+### License
+MIT License
