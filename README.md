@@ -2,6 +2,11 @@
 
 <!-- <br />
 [![Build Status](https://travis-ci.org/thrifus/Tortle.svg)](https://travis-ci.org/thrifus/Tortle) -->
+<br />
+[![Flattr this][2]][1]
+
+[1]: http://github.com/thrifus/Tortle
+[2]: http://api.flattr.com/button/button-static-50x60.png
 
 ### Description:
 Tortle is a small litle utility for Mac OS X that can easily enable and disable Tor.
