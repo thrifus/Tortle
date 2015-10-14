@@ -1,13 +1,13 @@
 # ![Tortle Header Image](http://i.imgur.com/wsacBIn.png) Tortle - A tiny utility for Tor on OS X
 
 <br />
-[![Build Status][travis_img]][travis_link]
-[travis_img]: https://travis-ci.org/thrifus/Tortle.svg
-[travis_link]: https://travis-ci.org/thrifus/Tortle
+[![Build Status][travis_IMG]][travis_LINK]
+[travis_IMG]: https://travis-ci.org/thrifus/Tortle.svg
+[travis_LINK]: https://travis-ci.org/thrifus/Tortle
 
-[![Flattr this][flattr_img]][flattr_link]
-[flattr_img]: http://button.flattr.com/flattr-badge-large.png
-[flattr_link]: https://flattr.com/submit/auto?user_id=thrifus&url=https%3A%2F%2Fgithub.com%2Fthrifus%2FTortle
+[![Flattr this][flattr_IMG]][flattr_LINK]
+[flattr_IMG]: http://button.flattr.com/flattr-badge-large.png
+[flattr_LINK]: https://flattr.com/submit/auto?user_id=thrifus&url=https%3A%2F%2Fgithub.com%2Fthrifus%2FTortle
 
 ### Description:
 Tortle is a small litle utility for Mac OS X that can easily enable and disable Tor.
