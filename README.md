@@ -1,5 +1,6 @@
 # ![Tortle Header Image](http://i.imgur.com/wsacBIn.png) Tortle - A tiny utility for Tor on OS X
 
+
 [![Build Status](https://travis-ci.org/thrifus/Tortle.svg)](https://travis-ci.org/thrifus/Tortle)
 
 ### Description:
