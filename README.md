@@ -5,6 +5,8 @@
 [travis_IMG]: https://travis-ci.org/thrifus/Tortle.svg
 [travis_LINK]: https://travis-ci.org/thrifus/Tortle
 
+_NOTE: BUILD IS FAILING BECAUSE REPOSITORY IS NOT NOTABLE ENOUGH_
+
 [![Flattr this][flattr_IMG]][flattr_LINK]
 [flattr_IMG]: http://button.flattr.com/flattr-badge-large.png
 [flattr_LINK]: https://flattr.com/submit/auto?user_id=thrifus&url=https%3A%2F%2Fgithub.com%2Fthrifus%2FTortle
