@@ -3,8 +3,6 @@
 <br />
 [![Code Climate](https://aws.codeclimate.com/github/thrifus/Tortle/badges/gpa.svg)](https://aws.codeclimate.com/github/thrifus/Tortle)
 
-[![Test Coverage](https://aws.codeclimate.com/github/thrifus/Tortle/badges/coverage.svg)](https://aws.codeclimate.com/github/thrifus/Tortle/coverage)
-
 [![Issue Count](https://aws.codeclimate.com/github/thrifus/Tortle/badges/issue_count.svg)](https://aws.codeclimate.com/github/thrifus/Tortle)
 
 [![Flattr this][flattr_IMG]][flattr_LINK]
