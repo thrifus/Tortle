@@ -1,11 +1,11 @@
 # ![Tortle Header Image](http://i.imgur.com/wsacBIn.png) Tortle - A tiny utility for Tor on OS X
 
 <br />
-[![Build Status][travis_IMG]][travis_LINK]
-[travis_IMG]: https://travis-ci.org/thrifus/Tortle.svg
-[travis_LINK]: https://travis-ci.org/thrifus/Tortle
+[![Code Climate](https://aws.codeclimate.com/github/thrifus/Tortle/badges/gpa.svg)](https://aws.codeclimate.com/github/thrifus/Tortle)
 
-_NOTE: BUILD IS FAILING BECAUSE REPOSITORY IS NOT NOTABLE ENOUGH_
+[![Test Coverage](https://aws.codeclimate.com/github/thrifus/Tortle/badges/coverage.svg)](https://aws.codeclimate.com/github/thrifus/Tortle/coverage)
+
+[![Issue Count](https://aws.codeclimate.com/github/thrifus/Tortle/badges/issue_count.svg)](https://aws.codeclimate.com/github/thrifus/Tortle)
 
 [![Flattr this][flattr_IMG]][flattr_LINK]
 [flattr_IMG]: http://button.flattr.com/flattr-badge-large.png
