@@ -1,3 +1,5 @@
+# WARNING: TORTLE HAS BEEN DISCONTINUED. SORRY FOR THOSE WHO USE IT. TORTLE WILL STILL BE AVAILABLE FOR YOU TO FORK, RECREATE, FIX, AND EXPERIMENT WITH. ALL LICENSING HAS BEEN REMOVED AND TORTLE CAN BE REDISTRIBUTED HOWEVER YOU WANT.
+
 # ![Tortle Header Image](http://i.imgur.com/wsacBIn.png) Tortle - A tiny utility for Tor on OS X
 
 <br />
@@ -40,4 +42,5 @@ I just threw together the Tortle icon (see attributions below), so it looks kind
 + Turtle icon has been edited, for original icon, please see [here](http://www.flaticon.com/free-icon/big-turtle-_74710)
 
 ### License
-This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+NO LICENSE
+~~This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.~~
