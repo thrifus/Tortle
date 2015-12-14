@@ -8,7 +8,7 @@
 
 #-----  Tortle version 1.0.8
 
-## Makes bold an normal text, much easier than writing ${bold} text ${normal} every time
+## Makes bold and normal text, much easier than writing ${bold} text ${normal} every time
 bold=$(tput bold)
 normal=$(tput sgr0)
 ## Should be self explanatory, if not, it's the config file for Tor
@@ -33,7 +33,7 @@ if [ "$enableTor" = "1" ]
 then
 ## Run Tor as a daemon so we don't have to keep the window open
     tor --runasdaemon 1 -f $torccFile
-## Inject the following commands (wich need root) into a Bash shell
+## Inject the following commands (which need root) into a Bash shell
 sudo bash <<'INJECT'
     ## Self explanatory
     proxyAddress=127.0.0.1
@@ -55,7 +55,7 @@ INJECT
     exit 0
 elif [ "$disableTor" = "1" ]
 then
-## Inject the following commands (wich need root) into a Bash shell
+## Inject the following commands (which need root) into a Bash shell
 sudo bash <<'INJECT'
     ## Kill Tor
     sudo killall -9 tor
