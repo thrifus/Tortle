@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#-----  Created by:
-#-----  Patrick Hart
-#-----  thrifus@gmail.com
-#-----  http://thrifus.co/
-#-----  http://github.com/thrifus/Tortle
+######  Created by:
+######  Patrick Hart
+######  thrifus@gmail.com
+######  http://thrifus.co/
+######  http://github.com/thrifus/Tortle
 
-#-----  Tortle version 1.0.8
+######  Tortle version 1.0.8
 
 ## Makes bold and normal text, much easier than writing ${bold} text ${normal} every time
 bold=$(tput bold)
