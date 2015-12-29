@@ -6,21 +6,15 @@
 ######  http://thrifus.co/
 ######  http://github.com/thrifus/Tortle
 
-<<<<<<< HEAD
-######  Tortle version 1.0.9
+######  Tortle version 1.0.?
 
 ## Makes bold and normal text, much easier than writing ${bold} text ${normal} every time
 BOLD=$(tput bold)
 NORM=$(tput sgr0)
-=======
-######  Tortle version 1.0.8
 
-## Makes bold and normal text, much easier than writing ${bold} text ${normal} every time
-bold=$(tput bold)
-normal=$(tput sgr0)
->>>>>>> origin/master
 ## Should be self explanatory, if not, it's the config file for Tor
 torrcFile=/usr/local/etc/tor/torrc
+
 ## Arguments
 enableTor=
 disableTor=
@@ -40,11 +34,7 @@ done
 if [ "$enableTor" = "1" ]
 then
 ## Run Tor as a daemon so we don't have to keep the window open
-<<<<<<< HEAD
-    tor --runasdaemon 0 -f $torrcFile
-=======
     tor --runasdaemon 1 -f $torccFile
->>>>>>> origin/master
 ## Inject the following commands (which need root) into a Bash shell
 sudo bash <<'INJECT'
     ## Self explanatory
