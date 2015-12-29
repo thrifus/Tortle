@@ -1,18 +1,26 @@
 #!/bin/bash
 
-#-----  Created by:
-#-----  Patrick Hart
-#-----  thrifus@gmail.com
-#-----  http://thrifus.co/
-#-----  http://github.com/thrifus/Tortle
+######  Created by:
+######  Patrick Hart
+######  thrifus@gmail.com
+######  http://thrifus.co/
+######  http://github.com/thrifus/Tortle
 
-#-----  Tortle version 1.0.8
+<<<<<<< HEAD
+######  Tortle version 1.0.9
 
-## Makes bold an normal text, much easier than writing ${bold} text ${normal} every time
+## Makes bold and normal text, much easier than writing ${bold} text ${normal} every time
+BOLD=$(tput bold)
+NORM=$(tput sgr0)
+=======
+######  Tortle version 1.0.8
+
+## Makes bold and normal text, much easier than writing ${bold} text ${normal} every time
 bold=$(tput bold)
 normal=$(tput sgr0)
+>>>>>>> origin/master
 ## Should be self explanatory, if not, it's the config file for Tor
-torccFile=/usr/local/etc/tor/torcc
+torrcFile=/usr/local/etc/tor/torrc
 ## Arguments
 enableTor=
 disableTor=
@@ -32,8 +40,12 @@ done
 if [ "$enableTor" = "1" ]
 then
 ## Run Tor as a daemon so we don't have to keep the window open
+<<<<<<< HEAD
+    tor --runasdaemon 0 -f $torrcFile
+=======
     tor --runasdaemon 1 -f $torccFile
-## Inject the following commands (wich need root) into a Bash shell
+>>>>>>> origin/master
+## Inject the following commands (which need root) into a Bash shell
 sudo bash <<'INJECT'
     ## Self explanatory
     proxyAddress=127.0.0.1
@@ -51,11 +63,11 @@ sudo bash <<'INJECT'
     echo
     sudo networksetup -setairportpower en0 off; networksetup -setairportpower en0 on
 INJECT
-    echo -e "${bold}Tor is now enabled and SOCKS proxy has been enabled to use Tor.${normal}"
+    echo -e "${BOLD}Tor is now enabled and SOCKS proxy has been enabled to use Tor.${NORM}"
     exit 0
 elif [ "$disableTor" = "1" ]
 then
-## Inject the following commands (wich need root) into a Bash shell
+## Inject the following commands (which need root) into a Bash shell
 sudo bash <<'INJECT'
     ## Kill Tor
     sudo killall -9 tor
@@ -68,9 +80,9 @@ sudo bash <<'INJECT'
     echo
     sudo networksetup -setairportpower en0 off; networksetup -setairportpower en0 on
 INJECT
-    echo -e "${bold}Tor has been stopped and SOCKS proxy has been disabled.${normal}"
+    echo -e "${BOLD}Tor has been stopped and SOCKS proxy has been disabled.${NORM}"
     exit 0
 elif [ "$1" = "" ]
 then
-    echo -e "${bold}Usage: tortle [-e or --enable to enable ] [-d or --disable to disable]${normal}"
+    echo -e "${BOLD}Usage: tortle [-e or --enable to enable ] [-d or --disable to disable]${NORM}"
 fi
