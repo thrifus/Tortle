@@ -8,71 +8,46 @@
 
 ######  Tortle version 1.0.?
 
-## Makes bold and normal text, much easier than writing ${bold} text ${normal} every time
 BOLD=$(tput bold)
 NORM=$(tput sgr0)
 
-## Should be self explanatory, if not, it's the config file for Tor
-torrcFile=/usr/local/etc/tor/torrc
+proxyAddress="127.0.0.1"
+proxyPort="9050"
 
-## Arguments
-enableTor=
-disableTor=
+enableTor="0"
+disableTor="0"
 
-## Setup the arguments
 while [ "$1" != "" ]; do
 case $1 in
-    -e | --enable )     enableTor=1
-                        break ;;
-    -d | --disable )    disableTor=1
-                        break ;;
-    * )                 exit 0
+	-e | --enable )     enableTor="1"
+	                break ;;
+	-d | --disable )    disableTor="1"
+	                break ;;
+	* )                 exit 0
 esac
 done
 
-## Check the arguments
 if [ "$enableTor" = "1" ]
 then
-## Run Tor as a daemon so we don't have to keep the window open
-    tor --runasdaemon 1 -f $torccFile
-## Inject the following commands (which need root) into a Bash shell
-sudo bash <<'INJECT'
-    ## Self explanatory
-    proxyAddress=127.0.0.1
-    ## Also self explanatory
-    proxyPort=9050
-
-    ## Set the SOCKS proxy
-    sudo networksetup -setsocksfirewallproxy Wi-Fi $proxyAddress $proxyPort
-
-    ## Set the SOCKS proxy to on
-    sudo networksetup -setsocksfirewallproxystate Wi-Fi on
-
-    ## Restart network to ensure proxy connections
-    echo -e '\033[1mRestarting your network...\033[0m'
-    echo
-    sudo networksetup -setairportpower en0 off; networksetup -setairportpower en0 on
-INJECT
-    echo -e "${BOLD}Tor is now enabled and SOCKS proxy has been enabled to use Tor.${NORM}"
-    exit 0
+	tor --runasdaemon 1 & wait tor &
+	sudo networksetup -setsocksfirewallproxy Wi-Fi $proxyAddress $proxyPort
+	sudo networksetup -setsocksfirewallproxystate Wi-Fi on
+	echo -e "\n\033[1mRestarting your network...\033[0m"
+	sudo networksetup -setairportpower en0 off
+	sudo networksetup -setairportpower en0 on
+	echo -e "${BOLD}Tor is now enabled and SOCKS proxy has been enabled to use Tor.${NORM}\n"
+	exit 0
 elif [ "$disableTor" = "1" ]
 then
-## Inject the following commands (which need root) into a Bash shell
 sudo bash <<'INJECT'
-    ## Kill Tor
-    sudo killall -9 tor
-
-    ## Set the SOCKS proxy to off
-    sudo networksetup -setsocksfirewallproxystate Wi-Fi off
-
-    ## Restart network to ensure proxy connections
-    echo -e '\033[1mRestarting your network...\033[0m'
-    echo
-    sudo networksetup -setairportpower en0 off; networksetup -setairportpower en0 on
+	sudo killall -9 tor
+	sudo networksetup -setsocksfirewallproxystate Wi-Fi off
+	echo -e '\n\033[1mRestarting your network...\033[0m'
+	sudo networksetup -setairportpower en0 off; networksetup -setairportpower en0 on
 INJECT
-    echo -e "${BOLD}Tor has been stopped and SOCKS proxy has been disabled.${NORM}"
-    exit 0
+	echo -e "${BOLD}Tor has been stopped and SOCKS proxy has been disabled.${NORM}\n"
+	exit 0
 elif [ "$1" = "" ]
 then
-    echo -e "${BOLD}Usage: tortle [-e or --enable to enable ] [-d or --disable to disable]${NORM}"
+	echo -e "${BOLD}Usage: tortle [-e or --enable to enable ] [-d or --disable to disable]${NORM}"
 fi
