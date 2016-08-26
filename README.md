@@ -14,7 +14,7 @@ Please note that you may need to setup your __torcc__ file. If the path to your 
 ### Installation:
 __Using Homebrew (recommended):__
 + `brew tap thrifus/Tortle`
-+ `brew install Tortle`
++ `brew install Tortle` (if you don't already have Tor installed with Homebrew, use `--with-tor` to install it)
 
 __Using `cURL` to install to `/usr/bin/tortle`:__
 + `sudo curl https://raw.githubusercontent.com/thrifus/Tortle/master/tortle -o /usr/bin/tortle; sudo chmod +x /usr/bin/tortle`
